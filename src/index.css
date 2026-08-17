@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #040714;
+    color: #F8F7F4;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.035em;
+  }
+}
+
+/* Precision Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040714;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
+
+/* Rich Futuristic Glass Surface */
+.universe-panel {
+  background: linear-gradient(135deg, rgba(13, 23, 61, 0.75) 0%, rgba(6, 11, 30, 0.92) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.85), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+}
+
+.universe-panel-cyan {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(6, 11, 30, 0.92) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.85), 0 0 35px rgba(6, 182, 212, 0.2);
+}
+
+.universe-panel-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Moving Light Particle Beams */
+.moving-beam-violet {
+  stroke: #8B5CF6;
+  stroke-dasharray: 8 16;
+  animation: beamFlow 3s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.9));
+}
+
+.moving-beam-cyan {
+  stroke: #06B6D4;
+  stroke-dasharray: 8 16;
+  animation: beamFlow 3s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.9));
+}
+
+.moving-beam-mint {
+  stroke: #10B981;
+  stroke-dasharray: 8 16;
+  animation: beamFlow 2.5s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.9));
+}
+
+.moving-beam-coral {
+  stroke: #EF4444;
+  stroke-dasharray: 10 12;
+  animation: beamFlow 2s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.95));
+}
+
+.moving-beam-amber {
+  stroke: #F59E0B;
+  stroke-dasharray: 8 14;
+  animation: beamFlow 2.8s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.9));
+}
+
+@keyframes beamFlow {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Laser Scanning Beam */
+.animate-laser-scan-rich {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #06B6D4, #8B5CF6, transparent);
+  box-shadow: 0 0 18px #06B6D4, 0 0 35px #8B5CF6;
+  animation: laserScanRich 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes laserScanRich {
+  0% { top: 3%; opacity: 0.7; }
+  100% { top: 96%; opacity: 0.98; }
+}
+
+/* Floating Paper Prescription Look */
+.paper-prescription {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  box-shadow: 0 18px 35px -10px rgba(0, 0, 0, 0.35), 0 0 1px 1px rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-prescription:hover {
+  box-shadow: 0 24px 45px -10px rgba(139, 92, 246, 0.3), 0 0 1px 1px rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
